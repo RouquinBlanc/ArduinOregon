@@ -28,7 +28,7 @@ Power power(REFERENCE_VOLTAGE);
 
 /* MPL3115A2 config */
 #define MPL_WAKE_PIN 2
-#define MPL_TIME_STEP 6
+#define MPL_TIME_STEP 2
 #define MPL_SAMPLE_RATE 7
 #define MPL_ALTITUDE 30 // Local altitude at home
 MPL3115A2 mpl;
@@ -100,7 +100,6 @@ void loop()
   power.deepSleep(); // SLEEP UNTIL DATA READY
 
   /* Activity */
-  STATUS_HIGH();
 
   // Retrieve pressure
   float pressure = mpl.readPressure(0, MPL_ALTITUDE);
@@ -118,10 +117,10 @@ void loop()
   DEBUG_println(voltage);
 
   // Emit temperature as an Oregon sensor
+  STATUS_HIGH();
   sender.send(temperature, 0, pressure, voltage > VOLTAGE_THRESH);
-  DEBUG_println("-----");
-
   STATUS_LOW();
   
+  DEBUG_println("-----");
 } /* loop */
 
