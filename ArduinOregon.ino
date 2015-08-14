@@ -19,6 +19,8 @@
 
 /* POWER REF: Adjust this value to your board's specific internal BG voltage */
 #define REFERENCE_VOLTAGE 1077L
+#define SLEEP_INTERRUPT 0
+#define SLEEP_INTERRUPT_MODE RISING
 Power power(REFERENCE_VOLTAGE); 
 
 /* STATUS LED */
@@ -96,8 +98,9 @@ void loop()
     // Do not execute the usual code
     return;
   }
-  
-  power.deepSleep(); // SLEEP UNTIL DATA READY
+
+  // SLEEP UNTIL DATA READY
+  power.deepSleepUntilInterrupt(SLEEP_INTERRUPT, SLEEP_INTERRUPT_MODE);
 
   /* Activity */
 

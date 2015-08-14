@@ -34,13 +34,13 @@ float Power::getVoltage()
 /* ISR called on INTERRUPT */
 void wakeUpNow(void) { /* nothing to do, just wake up */ }
 
-void Power::deepSleep()
+void Power::deepSleepUntilInterrupt(int errupt, int mode)
 {
   DEBUG_println("Going to sleep...");
   DEBUG_delay(100);
 
   set_sleep_mode(SLEEP_MODE_PWR_DOWN);   // sleep mode is set here
-  attachInterrupt(0, wakeUpNow, RISING);
+  attachInterrupt(errupt, wakeUpNow, mode);
 
   // Turn off brown-out
   noInterrupts ();           // timed sequence follows

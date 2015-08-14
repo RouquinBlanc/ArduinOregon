@@ -6,13 +6,24 @@
 class Power
 {
     public:
+        /**
+         * Initialise power module.
+         * @param ref   Reference voltage of the board.
+         */
         Power(long ref);
 
+        /**
+         * Get board current Voltage.
+         * @return voltage in volts.
+         */
         float getVoltage(void);
 
-        void deepSleep(void);
-
-        void deepSleepUntil(int millis);
+        /**
+         * Power Down Sleep mode until an interrupt arrives.
+         * @param errupt    Interrupt number (0 or 1 on Arduino Uno/Nano)
+         * @param mode      Interrupt mode (ex: RISING)
+         */
+        void deepSleepUntilInterrupt(int errupt, int mode);
 
     private:
         long _ref;
