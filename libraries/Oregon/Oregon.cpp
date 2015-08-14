@@ -190,7 +190,7 @@ void Oregon::setTemperature(byte *data, float temp)
   data[5] |= tf;
 
   // Set temperature float part
-  data[4] |= (tempFloat << 4);
+  data[4] = (tempFloat << 4) + (data[4] & 0x0F);
 }
 
 /**
