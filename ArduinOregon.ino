@@ -30,7 +30,7 @@ Power power(REFERENCE_VOLTAGE);
 
 /* MPL3115A2 config */
 #define MPL_WAKE_PIN 2
-#define MPL_TIME_STEP 2
+#define MPL_TIME_STEP 6
 #define MPL_SAMPLE_RATE 7
 #define MPL_ALTITUDE 30 // Local altitude at home
 MPL3115A2 mpl;
