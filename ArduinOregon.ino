@@ -1,11 +1,25 @@
 /*
- MPL3115A2 Barometric Sensor Example
- By:  A.Weiss, 7/17/2012, 
-      changes Nathan Seidle Sept 23rd, 2013,
-      changes Jonathan Martin Aug 12th, 2015,
-      
- License: This code is public domain but you buy me a beer if you use this and we meet someday (Beerware license).
-
+ * Arduino/MPL3115A2 emulating Oregon Sensor.
+ *
+ * Copyright (C) 2015 Jonathan Martin <therouquinblanc@gmail.com>
+ * Based on original work from:
+ *   - A.Weiss, 7/17/2012       [MPL3115A2 example]
+ *   - Nathan Seidle, 9/23/2013 [MPL3115A2 example]
+ *   - Olivier Lebrun, 2013     [Oregon on Arduino]
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
  
 #include <avr/power.h>
